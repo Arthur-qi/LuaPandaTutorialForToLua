@@ -11,7 +11,7 @@ print("package.path:",package.path);
 require("LuaPanda").start("127.0.0.1",8818);
 
 3.在LuaManager.cs的void OpenLibs()中打开lua.OpenLibs(LuaDLL.luaopen_socket_core)
-4.运行在VSCode中运行LuaPanda调试附加到Unity中
+4.在VSCode中运行LuaPanda调试器附加到Unity中
 5.运行项目的LuaFramework\Scenes\main场景，就可以调试了
 
 
