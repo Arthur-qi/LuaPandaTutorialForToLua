@@ -1,0 +1,18 @@
+				luaPanda在tolua的LuaFramework_UGUI中的使用教程
+												-- write by Arthur.qi
+1.复制luaPanda.txt到Tolua项目的任意目录，这里我放在了\Assets\LuaFramework\目录下，并修改后缀名为luaPanda.lua
+2.打开\Assets\LuaFramework\ToLua\Lua\tolua.lua文件，在文件最上面添加如下代码：
+
+--设置LuaPanda.lua的引用路径
+local LuaPandaPath = "E:\\Tests\\LuaFramework_UGUI-master\\Assets\\LuaFramework\\";
+package.path = package.path..";"..LuaPandaPath.."?.lua";
+print("package.path:",package.path);
+--引用LuaPanda.lua，并连接到调试服务器。
+require("LuaPanda").start("127.0.0.1",8818);
+
+3.在LuaManager.cs的void OpenLibs()中打开lua.OpenLibs(LuaDLL.luaopen_socket_core)
+4.运行在VSCode中运行LuaPanda调试附加到Unity中
+5.运行项目的LuaFramework\Scenes\main场景，就可以调试了
+
+
+注意：如果要运行其他Examples调试，请确保调用了lua.OpenLibs(LuaDLL.luaopen_socket_core)函数，打开了LuaSocket库。
